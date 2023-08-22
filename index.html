@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/08696438a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="script.js"></script>
+    <title>Sudoku</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="head-title">Sudoku</h1>
+
+      <div class="nav">
+        <div class="difficulty">
+          <div class="difficulty-text">Difficulty:</div>
+          <div class="buttons">
+            <button id="easy" class="button-39 select-diff" role="button">
+              Easy
+            </button>
+            <button id="medium" class="button-39" role="button">Medium</button>
+            <button id="hard" class="button-39" role="button">Hard</button>
+          </div>
+        </div>
+
+        <div class="mistake">
+          Mistakes: <span id="mistake">0</span><span>/3</span>
+        </div>
+
+        <div class="timer-container">
+          <h1 id="timer">00:00</h1>
+        </div>
+      </div>
+
+      <div id="game">
+        <div class="gameContainer">
+          <div id="gameBoard"></div>
+          <div class="cenre">
+            <div id="digits" class="digitContainer"></div>
+            <div class="earseer">
+              <div id="delete" class="erase">
+                <i class="fas fa-eraser"></i>
+              </div>
+              <div class="erase-text">Erase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
