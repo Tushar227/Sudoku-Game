@@ -196,7 +196,6 @@ const getBoard = async function (difficulty) {
     if (!resData.ok) throw new Error('Error');
 
     const data = await resData.json();
-    // console.log(data);
     board = data.board;
 
     const solRes = await fetch('https://sugoku.onrender.com/solve', {
@@ -209,13 +208,12 @@ const getBoard = async function (difficulty) {
 
     const solData = await solRes.json();
     const getSol = solData.solution;
-    console.log(getSol);
+
 
     const boardStringArrayPuzzle = convertArrayToString(board);
     sol = convertArrayToString(getSol);
     intitGame(boardStringArrayPuzzle);
 
-    // console.log(sol.solution);
   } catch (error) {
     console.log(error);
   } finally {
@@ -243,7 +241,6 @@ const setDifficuly = function () {
   gamePlay.style.opacity = 0;
   gameBoard.innerHTML = '';
   digits.innerHTML = '';
-  console.log(diff);
   alert(`Leaving this game and changed difficuty to ${diff}`);
   getBoard(diff);
 };
