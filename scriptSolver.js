@@ -131,7 +131,6 @@ const FillBoard = function (solution) {
     .flat();
   const allTiles = gameBoard.querySelectorAll('.tile');
 
-  console.log(solString);
   let pointer = 0;
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
@@ -150,7 +149,6 @@ const solveSudoku = function () {
     tile.innerText != '' ? tile.innerText : '.'
   );
   const boardStringArray = stringToArray(boardString);
-  console.log(boardStringArray);
   const sol = solver(boardStringArray);
 
   if (sol) {
@@ -165,7 +163,7 @@ const solveSudoku = function () {
   }
 };
 
-const hi = function () {
+const startNewGame = function () {
   gamePlay.style.opacity = 0;
   gameBoard.innerHTML = '';
   digits.innerHTML = '';
@@ -174,4 +172,4 @@ const hi = function () {
 };
 
 solveBtn.addEventListener('click', solveSudoku);
-newGameBtn.addEventListener('click', hi);
+newGameBtn.addEventListener('click', startNewGame);
