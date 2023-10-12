@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+3:wght@200;300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -11,6 +12,75 @@ body {
   font-weight: 200;
 }
 
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.button-19 {
+  appearance: button;
+  min-width: fit-content;
+  max-width: max-content;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
 .head-title {
   margin-top: 0.5rem;
 }
@@ -19,7 +89,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
   margin-right: 2rem;
 }
 
@@ -214,7 +286,7 @@ body {
 #delete i {
   font-weight: 900;
   font-size: 25px;
-  color: rgb(39, 164, 218);
+  color: rgba(64, 215, 165);
   cursor: pointer;
 }
 
@@ -253,4 +325,29 @@ body {
 
 .select-diff {
   color: rgba(64, 215, 165);
+}
+
+.start-btn {
+  font-size: 15pt;
+  font-family: 'Press Start 2p';
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgba(130, 244, 206, 0.8);
+  text-shadow: -1px -1px rgba(64, 215, 165, 0.5), 1px 1px rgb(210, 243, 232);
+  color: rgba(64, 215, 165);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em rgba(64, 215, 165);
+  cursor: pointer;
+}
+
+.start-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.2em;
 }
