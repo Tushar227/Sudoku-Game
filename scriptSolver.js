@@ -143,7 +143,65 @@ const FillBoard = function (solution) {
   }
 };
 
+const isValidInitialSudoku = function () {
+  const allTiles = gameBoard.querySelectorAll('.tile');
+  const boardString = [...allTiles].map((tile) =>
+    tile.innerText.trim() !== '' ? tile.innerText : '.'
+  );
+  const boardStringArray = stringToArray(boardString);
+
+  // Check rows
+  for (let i = 0; i < 9; i++) {
+    const rowSet = new Set();
+    for (let j = 0; j < 9; j++) {
+      if (boardStringArray[i][j] !== '.') {
+        if (rowSet.has(boardStringArray[i][j])) {
+          return false;
+        }
+        rowSet.add(boardStringArray[i][j]);
+      }
+    }
+  }
+
+  // Check columns
+  for (let j = 0; j < 9; j++) {
+    const colSet = new Set();
+    for (let i = 0; i < 9; i++) {
+      if (boardStringArray[i][j] !== '.') {
+        if (colSet.has(boardStringArray[i][j])) {
+          return false;
+        }
+        colSet.add(boardStringArray[i][j]);
+      }
+    }
+  }
+
+  // Check 3x3 squares
+  for (let blockRow = 0; blockRow < 9; blockRow += 3) {
+    for (let blockCol = 0; blockCol < 9; blockCol += 3) {
+      const squareSet = new Set();
+      for (let i = blockRow; i < blockRow + 3; i++) {
+        for (let j = blockCol; j < blockCol + 3; j++) {
+          if (boardStringArray[i][j] !== '.') {
+            if (squareSet.has(boardStringArray[i][j])) {
+              return false;
+            }
+            squareSet.add(boardStringArray[i][j]);
+          }
+        }
+      }
+    }
+  }
+
+  return true;
+};
+
 const solveSudoku = function () {
+  if (!isValidInitialSudoku()) {
+    alert('Invalid initial Sudoku configuration!');
+    startNewGame();
+    return;
+  }
   const allTiles = gameBoard.querySelectorAll('.tile');
   const boardString = [...allTiles].map((tile) =>
     tile.innerText != '' ? tile.innerText : '.'
